@@ -1,0 +1,114 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#preloader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0; right: 0;
+  z-index: 101;
+  pointer-events: none;
+}
+#preloader #first {
+  background-color: rgb(10, 10, 31);
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: splitsleft 1000ms ease 10s forwards;
+  transform-origin: left center;
+}
+#preloader #second {
+  background-color: rgb(10, 10, 31);
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%; height: 100%;
+  animation: splitsright 1000ms ease 10s forwards;
+  transform-origin: right center;
+}
+@keyframes splitsleft{
+  0%{
+    transform: scaleX(1);
+  }
+  100%{
+    transform: scaleX(0);
+  }
+}
+@keyframes splitsright{
+  0%{
+    transform: scaleX(1);
+  }
+  100%{
+    transform: scaleX(0);
+  }
+}
+#first:after {    
+  /* background: none repeat scroll 0 0 transparent; */
+  content: "";
+  bottom: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  background: wheat;
+  width: 2px;
+  animation: lineDown 1s ease 9s;
+  height: 0;
+}
+@keyframes lineDown {
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 100%;
+  }
+}
+
+
+
+
+#welcome{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+#welcome>span{
+  white-space: pre;
+  text-align: center;
+  color: rgb(255, 242, 219);
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  5%{
+    opacity: 1;
+  }
+  95%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+#loginBack{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../static/image/wallpaperflare.com_wallpaper.jpg);
+  vertical-align: top;
+  object-fit: cover;
+}
